@@ -6,10 +6,6 @@
    a. **Share build times**  
    Locally:
 
-   ```bash
-   docker build -t dmesa2/sa_assessment:latest .
-   ```
-
    Building: **23.9s (22/22) FINISHED**
 
    GitHub Actions: **10min+**
