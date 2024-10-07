@@ -30,7 +30,11 @@
 
 4. **Use the created image to create a Kubernetes deployment with a command that will keep the pod running.**
 
-Go to the deployment manifest file: /Kubernetes/Deployment/sa-assessment-deployment.yaml
+Go to the deployment manifest file:
+
+```bash
+/Kubernetes/Deployment/sa-assessment-deployment.yaml
+```
 
 ```bash
 kubectl apply -f sa-assessment-deployment.yaml
@@ -44,7 +48,11 @@ sa-assessment-deployment-55b4f8589f-mwjtw   1/1     Running   0          35s
 
 5. **Expose the deployed resource.**
 
-Go to the service manifest file: /Kubernetes/Service/sa-assessment-service.yaml
+Go to the service manifest file:
+
+```bash
+/Kubernetes/Service/sa-assessment-service.yaml
+```
 
 ```bash
 kubectl apply -f sa-assessment-service.yaml
@@ -59,8 +67,8 @@ sa-assessment-service   NodePort    10.96.198.192   <none>        80:31176/TCP  
 
 6. **Every step mentioned above has to be in a code repository with automated CI/CD.**
 
-The code repository can be found at: dmesa2/SA_General_Questions_Assessment
-The CI/CD workflow is located at: .github/workflows/docker-build-and-push.yml
+The code repository can be found at: [GitHub Repo](https://github.com/dmesa2/SA_General_Questions_Assessment)
+The CI/CD workflow is located at: [GitHub CI/CD](https://github.com/dmesa2/SA_General_Questions_Assessment/blob/main/.github/workflows/docker-build-and-push.yml)
 
 7. **How would you monitor the above deployment? Explain or implement the tools that you would use.**
 
@@ -75,7 +83,6 @@ kubectl create namespace monitoring
 ```
 
 Step 1: Add Helm Repositories
-Before installing Prometheus and Grafana, we need to add the required Helm repositories:
 
 ```bash
 # Add the Prometheus community helm charts
@@ -119,10 +126,29 @@ Login to Grafana and add Prometheus as a Data Source
 
 Step 6: Create the Dashboards, Panels, and Alerts
 Create the following dashboards:
-Deployment Overview - CPU Usage - Memory Usage - Pod Status - Request Rate
 
-Application Performance Dashboard - Response Time - Error Rate - Active Users
+- **Deployment Overview Dashboards**
 
-Resource Utilization Dashboard - Node CPU Usage - Node Memory Usage - Disk I/O
+  - CPU Usage
+  - Memory Usage
+  - Pod Status
+  - Request Rate
 
-Alerts: - CPU and Memory Usage Alerts - Pod Health Alerts - Error Rate Alerts - Deployment Rollback Alerts
+- **Application Performance Dashboard**
+
+  - Response Time
+  - Error Rate
+  - Active Users
+
+- **Resource Utilization Dashboard**
+
+  - Node CPU Usage
+  - Node Memory Usage
+  - Disk I/O
+
+- **Alerts**
+
+  - CPU and Memory Usage Alerts
+  - Pod Health Alerts
+  - Error Rate Alerts
+  - Deployment Rollback Alerts
