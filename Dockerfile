@@ -22,7 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -O https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz && \
 	tar -xzf Python-2.7.18.tgz && \
 	cd Python-2.7.18 && \
-	./configure --enable-optimizations && \
+	./configure --enable-optimizations --without-tests && \
 	make && \
 	make install && \
 	cd .. && \
