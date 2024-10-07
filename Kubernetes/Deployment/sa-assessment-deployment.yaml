@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sa-assessment-deployment
+  labels:
+    app: sa-assessment-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sa-assessment-app
+  template:
+    metadata:
+      labels:
+        app: sa-assessment-app
+    spec:
+      containers:
+      - name: sa-assessment-container
+        image: dmesa2/sa_assessment:latest
+        command: ["tail", "-f", "/dev/null"]
+        ports:
+        - containerPort: 80
