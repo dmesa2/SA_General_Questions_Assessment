@@ -18,14 +18,14 @@ jobs:
 
     - name: Build and Push Cache Image
       run: |
-        docker build --tag dmesa2/sa_assessment:cache --build-arg SKIP_TESTS=1 .
+        docker build --tag dmesa2/sa_assessment:cache .
         docker push dmesa2/sa_assessment:cache
 
     - name: Build Docker Image
       run: |
         echo "DOCKER_BUILDKIT=1" >> $GITHUB_ENV
         docker build --cache-from=type=registry,ref=dmesa2/sa_assessment:cache \
-          -t dmesa2/sa_assessment:latest --build-arg SKIP_TESTS=1 .
+          -t dmesa2/sa_assessment:latest .
 
     - name: Push Docker Image
       run: |
