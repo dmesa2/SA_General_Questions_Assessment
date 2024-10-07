@@ -17,6 +17,5 @@ spec:
       containers:
       - name: sa-assessment-container
         image: dmesa2/sa_assessment:latest
-        command: ["tail", "-f", "/dev/null"]
         ports:
         - containerPort: 80
