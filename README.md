@@ -10,7 +10,7 @@
 
    GitHub Actions: **10min+**
 
-   b. **How would you improve build times?**  
+   b. **How would you improve build times?**<br>
    The installation of r-base was the primary bottleneck affecting build times. Initially, I started with a standard Ubuntu image and attempted to install the necessary packages. However, after nearly an hour of building, I recognized the need for a different approach. Through research on Stack Overflow, I discovered an existing Docker image with R pre-installed, which significantly accelerated the process. I then added Python 2 and 3 and implemented a multi-stage build strategy to ensure that the final Docker image is lean, containing only the essential binaries.
 
    As for the build time in GitHub Actions, we could utilize GitHub Action cache exporter as written in this article to speed it up: [Using the GitHub Actions Cache Exporter](https://depot.dev/blog/docker-layer-caching-in-github-actions#using-the-github-actions-cache-exporter).
