@@ -8,7 +8,7 @@
 
    Building: **23.9s (22/22) FINISHED**
 
-   GitHub Actions: **10min+**
+   GitHub CI/CD: **10min+**
 
    b. **How would you improve build times?**
    The installation of r-base was the primary bottleneck affecting build times. Initially, I started with a standard Ubuntu image and attempted to install the necessary packages. However, after nearly an hour of building, I recognized the need for a different approach. Through research on Stack Overflow, I discovered an existing Docker image with R pre-installed, which significantly accelerated the process. I then added Python 2 and 3 and implemented a multi-stage build strategy to ensure that the final Docker image is lean, containing only the essential binaries.
