@@ -2,8 +2,8 @@
 
 1. **Create an image with python2, python3, R, install a set of requirements and upload it to docker hub.**
 
-2. **For the previously created image**
-   a. **Share build times**  
+2. **For the previously created image**<br>
+   a. **Share build times**
    Locally:
 
    Building: **23.9s (22/22) FINISHED**
